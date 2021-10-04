@@ -15,30 +15,30 @@
 <body>
     
     <section class="shown-page" id="shown-page-id">
-            <h1>Guess the Number!</h1>
+            <h1>Help Kim Guess the Number!</h1>
         <button id="play-button">Play!</button>
     </section>
-    <!-- add fun image for title -->
 
     <section class = "play-page" id="play-page-id" style="display:none">
         <div id="rules">
             <p>Guess a number between 1-20! You get 4 tries.</p>
         </div>
-
+            <span id="result-text"></span>
         <div>
             <input id="user-input" placeholder="#1-20"></input>
         <br>
-        <button id="guess-button">Guess!</button>
 
         </div>
-        <div id="guess-count-footer">
-            <span class="counter" id="result-text"></span>
+        <div>
             <h3 class="counter">Number of tries remaining</h3>
             <div id = "guess-count"></div>
+            <button id="guess-button">Guess!</button>
         </div>
     </section>
-        </div>
-
+    <section class = "lose-page" id="lose-page-id" style="display:none">
+        <button id="reset-button">Reset</button>
+    </section>
+        
 
     <script type="module" src="./app.js"></script>
 </body>

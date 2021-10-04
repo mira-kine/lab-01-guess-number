@@ -1,12 +1,20 @@
 body {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 500px;
-    margin: auto;
+    margin-top: auto;
+    background-image: url("../assets/kim-possible.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+#play-button {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    font-size: 1.4rem;
+    margin-top: auto;
+
+}
 #guess-button {
     border-radius: 50%;
     height: 100px;
@@ -23,12 +31,19 @@ body {
 
 .counter {
     font-size: 1.5rem;
+    color: white;
 }
 
 #guess-count {
-    border: 1px solid black;
+    border: 5px solid white;
     height: 50px;
     width: 50px;
     margin: auto;
     text-align: center;
+    color: white;
+    font-size: 2rem;
+}
+
+#result-text {
+    font-size: 1.5rem;
 }

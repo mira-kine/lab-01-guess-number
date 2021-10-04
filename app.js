@@ -5,45 +5,52 @@ const guessButton = document.getElementById('guess-button');
 // const numGuesses = document.getElementById('num-guesses'); //numRemaining is numGuesses===4
 const userInput = document.getElementById('user-input');
 const playButton = document.getElementById('play-button');
-const playPage = document.getElementById('play-page-id');
-const shownPage = document.getElementById('shown-page-id');
+// const playPage = document.getElementById('play-page-id');
+// const shownPage = document.getElementById('shown-page-id');
 const resultText = document.getElementById('result-text');
 const guessCount = document.getElementById('guess-count');
+const resetButton = document.getElementById('reset-button');
 
-let randomNum =  Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+let randomNum = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
 let numGuessesRemain = 4;
 
 playButton.addEventListener ('click', () => {
-  randomNum;
-  console.log(randomNum);
-  document.getElementById('play-page-id').style.display = 'block';
-  document.getElementById('shown-page-id').style.display = 'none';
+    randomNum;
+    document.getElementById('play-page-id').style.display = 'block';
+    document.getElementById('shown-page-id').style.display = 'none';
+    document.getElementById('lose-page-id').style.display = 'none';
 });
 
 guessButton.addEventListener ('click', () => {
-  numGuessesRemain--;
-  console.log(numGuessesRemain);
-  const userGuess = Number(userInput.value);
+    numGuessesRemain--;
+    console.log(numGuessesRemain);
+    const userGuess = Number(userInput.value);
   // console.log(Number(userInput.value));
-  let playerStatus;
-  if (userGuess === randomNum) {
-    playerStatus = "that's correct!";
-  }
-  else if (userGuess > randomNum) {
-      playerStatus = 'too high!';
-  }
-  else if (userGuess < randomNum) {
-      playerStatus = 'too low!';
-  }
+    let playerStatus;
+    if (userGuess === randomNum) {
+        playerStatus = "that's correct!";
+    }
+    else if (userGuess > randomNum) {
+        playerStatus = 'too high!';
+    }
+    else if (userGuess < randomNum) {
+        playerStatus = 'too low!';
+    }
   
-  if (numGuessesRemain <= 0) {
-      guessButton.style.display = 'none';
-      document.getElementById('play-page-id').style.display = 'block';
-      document.getElementById('guess-count-footer').style.display = 'block';
-      playerStatus = 'you lost!';
-  }
-  resultText.textContent = `${playerStatus}`;
-  guessCount.textContent = Number(numGuessesRemain);
+    if (numGuessesRemain <= 0) {
+        guessButton.style.display = 'none';
+        document.getElementById('play-page-id').style.display = 'block';
+        playerStatus = 'you lost!';
+        document.getElementById('lose-page-id').style.display = 'block';
+    }
+
+    resetButton.addEventListener ('click', () => {
+        document.getElementById('shown-page-id').style.display = 'block';
+        document.getElementById('play-page-id').style.display = 'none';
+    });
+
+    resultText.textContent = `${playerStatus}`;
+    guessCount.textContent = Number(numGuessesRemain);
 });
 
 
