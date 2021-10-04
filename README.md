@@ -2,6 +2,27 @@
 
 ## Making a plan
 
+## HTML Elements (View - what is static and what is dynamic?)
+Title: static
+Header: s
+Explain rules: s
+Input of type number for specifying guess: d
+Submit button: s
+Display of number of tries remaining: d
+Display of guess too high or too low: d
+Display of lose and win result: d
+
+## State:
+Initial states:
+    - Number of tries: 3
+    - 
+Input number type: Between 1-20 (including both)/ Use compareNumbers to compare guessed number to actual number
+Number of tries remaining: If they guess correct or use up guesses, disable further input and display an endlose or win message (decrement tries remaining)
+Guess too high: Display message
+Guess too low: Display message
+Lose result: display lose message, diable game play and try again
+win result: display win message, disable game play and try again
+
 (bolded steps are mandatory, unbolded are for more advanced projects)
 
 1) **Make a drawing of your app. Simple "wireframes"**
