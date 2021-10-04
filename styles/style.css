@@ -24,3 +24,11 @@ body {
 .counter {
     font-size: 1.5rem;
 }
+
+#guess-count {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    margin: auto;
+    text-align: center;
+}

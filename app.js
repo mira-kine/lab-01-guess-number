@@ -2,14 +2,16 @@
 //    button
 //    number remaining
 const guessButton = document.getElementById('guess-button');
-const numGuesses = document.getElementById('num-guesses'); //numRemaining is numGuesses===4
+// const numGuesses = document.getElementById('num-guesses'); //numRemaining is numGuesses===4
 const userInput = document.getElementById('user-input');
 const playButton = document.getElementById('play-button');
 const playPage = document.getElementById('play-page-id');
 const shownPage = document.getElementById('shown-page-id');
+const resultText = document.getElementById('result-text');
+const guessCount = document.getElementById('guess-count');
 
 let randomNum =  Math.floor(Math.random() * (20 - 1 + 1)) + 1;
-
+let numGuessesRemain = 4;
 
 // what state do i need 
 // what events am I listening for
@@ -25,24 +27,33 @@ let randomNum =  Math.floor(Math.random() * (20 - 1 + 1)) + 1;
 playButton.addEventListener ('click', () => {
   randomNum;
   console.log(randomNum);
-  // shownPage.classList.add('shown-page');
-  // playPage.classList.remove('shown-page');
   document.getElementById('play-page-id').style.display = "block";
   document.getElementById('shown-page-id').style.display = "none";
 });
 
 guessButton.addEventListener ('click', () => {
-  
-  if (userInput === randomNum) {
-    
+  numGuessesRemain--;
+  console.log(numGuessesRemain);
+  const userGuess = Number(userInput.value);
+  // console.log(Number(userInput.value));
+  let playerStatus;
+  if (userGuess === randomNum) {
+    playerStatus = "that's correct!";
   }
-  else if (userInput > randomNum) {
-
+  else if (userGuess > randomNum) {
+      playerStatus = 'too high!';
   }
-  else if (userInput < randomNum) {
-
+  else if (userGuess < randomNum) {
+      playerStatus = 'too low!';
   }
+  else if (numGuessesRemain === 0) {
+      document.getElementById('guess-count').style.display = "none";
+  }
+  resultText.textContent = `${playerStatus}`;
+  guessCount.textContent = Number(numGuessesRemain);
 });
+
+
 
 
 
