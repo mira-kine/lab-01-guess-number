@@ -15,11 +15,9 @@ Display of lose and win result: d
 ## State:
 Initial states:
     - Number of tries remaining: 3
-    - 
 Input number type: Between 1-20 (including both)/ Use compareNumbers to compare guessed number to actual number
 Number of tries remaining: If they guess correct or use up guesses, disable further input and display an endlose or win message (decrement tries remaining)
-Guess too high: Display message
-Guess too low: Display message
+Guess too high/low: Display message "You guessed (too high or too low)
 Lose result: display lose message, diable game play and try again
 win result: display win message, disable game play and try again
 
