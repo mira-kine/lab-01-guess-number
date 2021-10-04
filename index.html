@@ -13,22 +13,33 @@
 </head>
 
 <body>
-    <div>
-        <h1>Guess the Number!</h1>
+    
+    <section class="shown-page" id="shown-page-id">
+            <h1>Guess the Number!</h1>
+        <button id="play-button">Play!</button>
+    </section>
     <!-- add fun image for title -->
-    <!-- add rules -->
-    </div>
-    <div>
-        <input id="input-area" placeholder="#1-20"></input>
-        <br>
-        <button id="submit-button">Guess!</button>
 
-        <script type="module" src="./app.js"></script>
-    </div>
-    <div>
-        <h3 class="counter-display">Number of tries remaining</h3>
-        <div class="counter-display" id= "counter">3</div> 
-    </div>
+    <section class = "play-page" id="play-page-id" style="display:none">
+        <div id="rules">
+            <p>Guess a number between 1-20! You get 4 tries.</p>
+        </div>
+
+        <div>
+            <input id="user-input" placeholder="#1-20"></input>
+        <br>
+        <button id="guess-button">Guess!</button>
+
+        </div>
+        <div>
+            <h3 class="counter">Number of tries remaining</h3>
+        <div class="counter" id= "num-guesses">4</div>
+        </div>
+    </section>
+</div>
+
+
+    <script type="module" src="./app.js"></script>
 </body>
 
 </html>

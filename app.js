@@ -1,16 +1,48 @@
 // what DOM elements do I need
 //    button
 //    number remaining
-//    
+const guessButton = document.getElementById('guess-button');
+const numGuesses = document.getElementById('num-guesses'); //numRemaining is numGuesses===4
+const userInput = document.getElementById('user-input');
+const playButton = document.getElementById('play-button');
+const playPage = document.getElementById('play-page-id');
+const shownPage = document.getElementById('shown-page-id');
+
+let randomNum =  Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+
+
 // what state do i need 
 // what events am I listening for
 //    button Click
+//      Number must be between 1-20 else display "must be 1-20"
 //      decrement the amount of tries by 1
 //      compare the number guessed to the correct guess
 //          if numberGuess < correct guess set to 'too low!'
 //          if numberGuess > correct guess set to 'too high!'
 //          if number Guess = correct guess, go to ending result page "you win"
 //          if number of tries = 0, go to ending result page with "you lose"
+
+playButton.addEventListener ('click', () => {
+  randomNum;
+  console.log(randomNum);
+  // shownPage.classList.add('shown-page');
+  // playPage.classList.remove('shown-page');
+  document.getElementById('play-page-id').style.display = "block";
+  document.getElementById('shown-page-id').style.display = "none";
+});
+
+guessButton.addEventListener ('click', () => {
+  
+  if (userInput === randomNum) {
+    
+  }
+  else if (userInput > randomNum) {
+
+  }
+  else if (userInput < randomNum) {
+
+  }
+});
 
 
 

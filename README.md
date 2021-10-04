@@ -2,24 +2,43 @@
 
 ## Making a plan
 
-## HTML Elements (View - what is static and what is dynamic?)
-Title: static
-Header: s
-Explain rules: s
-Input of type number for specifying guess: d
-Submit button: s
-Display of number of tries remaining: d
-Display of guess too high or too low: d
-Display of lose and win result: d
+### HTML Elements (View - what is static and what is dynamic?)
+* Header: static
+* Explain rules: static
+* user input: static
+* Submit button: static
+* User message -- 
+    - Display of number of tries remaining: d
+    - Display of guess too high or too low: d
+    - Display of lose and win result: d
 
-## State:
-Initial states:
-    - Number of tries remaining: 3
-Input number type: Between 1-20 (including both)/ Use compareNumbers to compare guessed number to actual number
-Number of tries remaining: If they guess correct or use up guesses, disable further input and display an endlose or win message (decrement tries remaining)
-Guess too high/low: Display message "You guessed (too high or too low)
-Lose result: display lose message, diable game play and try again
-win result: display win message, disable game play and try again
+### State:
+    * Initial states:
+        - Number of tries remaining: 4
+        - random target number (dynamic)
+    * RandomNum -- generated at the start of every game.
+        - Input number type: Between 1-20 (including both)/ Use compareNumbers to compare guessed number to actual number
+    * numGuesses -- number of guesses -- decremented every time the user clicks the button (or incremented everytime user clicks button) 
+    * userMessage:
+        - 'You're correct' : userGuess === randomNum
+        - 'Guess too high' : userGuess > randomNum
+        - 'Guess too low' : userGuess < randomNum
+        - 'No more guesses' : numGuesses > 4
+        - 'Invalid guess' : if input is >20 or not a number (stretch)
+
+### PsuedoCode for Event
+```javascript
+// What events am I listening for
+// on button click do the following:
+//     decrement the guess count
+//     get the value of the user guess from the input
+//          CONVER THE INPUT TO A NUMBER
+//      compare the userGuess to the randomNumber
+//      if(userGuess) === randomNum -- display 'You won!'
+//      else if ( numGuesses === 4 ) -- display you lost, out of guesses
+//      else if (userGuess > randomNum) -- display 'guess too high'
+//      else if (userGuess < randomNum) -- display 'guess too low'
+```
 
 (bolded steps are mandatory, unbolded are for more advanced projects)
 
