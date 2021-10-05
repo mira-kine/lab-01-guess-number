@@ -2,11 +2,8 @@
 //    button
 //    number remaining
 const guessButton = document.getElementById('guess-button');
-// const numGuesses = document.getElementById('num-guesses'); //numRemaining is numGuesses===4
 const userInput = document.getElementById('user-input');
 const playButton = document.getElementById('play-button');
-// const playPage = document.getElementById('play-page-id');
-// const shownPage = document.getElementById('shown-page-id');
 const resultText = document.getElementById('result-text');
 const guessCount = document.getElementById('guess-count');
 const resetButton = document.getElementById('reset-button');
@@ -19,12 +16,12 @@ playButton.addEventListener ('click', () => {
     document.getElementById('play-page-id').style.display = 'block';
     document.getElementById('shown-page-id').style.display = 'none';
     document.getElementById('lose-page-id').style.display = 'none';
+
 });
 
 guessButton.addEventListener ('click', () => {
     numGuessesRemain--;
     const userGuess = Number(userInput.value);
-  // console.log(Number(userInput.value));
     let playerStatus;
     if (userGuess === randomNum) {
         playerStatus = "that's correct!";
@@ -38,20 +35,23 @@ guessButton.addEventListener ('click', () => {
   
     if (numGuessesRemain <= 0) {
         guessButton.style.display = 'none';
-        document.getElementById('play-page-id').style.display = 'block';
-        playerStatus = 'you lost!';
+        document.getElementById('play-page-id').style.display = 'none';
+        // playerStatus = 'you lost!';
         document.getElementById('lose-page-id').style.display = 'block';
     }
-
-    resetButton.addEventListener ('click', () => {
-        document.getElementById('shown-page-id').style.display = 'block';
-        document.getElementById('play-page-id').style.display = 'none';
-        document.getElementById('lose-page-id').style.display = 'none';
-    });
-
     resultText.textContent = `${playerStatus}`;
     guessCount.textContent = Number(numGuessesRemain);
 });
+
+resetButton.addEventListener ('click', () => {
+    console.log('clicking');
+    // document.getElementById('play-page-id').style.display = 'block';
+    // document.getElementById('lose-page-id').style.display = 'none';
+});
+
+//     resultText.textContent = `${playerStatus}`;
+//     guessCount.textContent = Number(numGuessesRemain);
+// });
 
 
 

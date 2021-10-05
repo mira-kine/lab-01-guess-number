@@ -1,21 +1,30 @@
+h1 {
+    color: whitesmoke;
+}
+
 body {
     text-align: center;
     margin-top: auto;
-    background-image: url("../assets/kim-possible.jpg");
-    background-repeat: no-repeat;
-    background-size: 
+    background-color: black;
 }
 
 .shown-page {
-    
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    display: block;
+    margin-top: 100px;
+    margin-left: 190px;
+    z-index: 2;
 }
 
 #play-button {
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 115px;
     font-size: 1.4rem;
-    margin-top: auto;
+    margin-top: 493px;
+    margin-right: 110px;
 
 }
 #guess-button {
@@ -35,6 +44,7 @@ body {
 .counter {
     font-size: 1.5rem;
     color: white;
+    margin-top: 100px;
 }
 
 #guess-count {
@@ -49,4 +59,32 @@ body {
 
 #result-text {
     font-size: 1.5rem;
+}
+
+#kim-phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    padding: 100px;
+    width: 700px;
+    height: 930px;
+    align-self: center;
+    z-index: 1;
+}
+
+.play-page {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    display: block;
+    margin-top: 100px;
+    margin-left: 190px;
+    z-index: 2;
+    color: white;
+}
+
+.lose-page {
+    color: white;
 }
