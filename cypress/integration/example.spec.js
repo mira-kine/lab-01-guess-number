@@ -1,12 +1,14 @@
 
-// describe('Example Test', ()=>{
-//     before(()=>{
-//         cy.visit('/');
-//     });
+describe('Example Test', ()=>{
+    before(()=>{
+        cy.visit('/');
+    });
 
-//     describe('HTML elements', ()=>{   
-//         it('contains the alchemy logo', ()=>{
-//             cy.get('.main-logo').should('be.visible');
-//         });
-//     });
-// });
+    describe('HTML elements', ()=>{   
+        it('contain kim phone', ()=>{
+            cy.get('#kim-phone').should('be.visible');
+            cy.get('#play-button').click();
+            cy.get('#reset-button').click();
+        });
+    });
+});
