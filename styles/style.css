@@ -1,10 +1,13 @@
 body {
     text-align: center;
-    width: 500px;
     margin-top: auto;
     background-image: url("../assets/kim-possible.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 
+}
+
+.shown-page {
+    
 }
 
 #play-button {

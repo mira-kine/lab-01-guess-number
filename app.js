@@ -23,7 +23,6 @@ playButton.addEventListener ('click', () => {
 
 guessButton.addEventListener ('click', () => {
     numGuessesRemain--;
-    console.log(numGuessesRemain);
     const userGuess = Number(userInput.value);
   // console.log(Number(userInput.value));
     let playerStatus;
@@ -47,6 +46,7 @@ guessButton.addEventListener ('click', () => {
     resetButton.addEventListener ('click', () => {
         document.getElementById('shown-page-id').style.display = 'block';
         document.getElementById('play-page-id').style.display = 'none';
+        document.getElementById('lose-page-id').style.display = 'none';
     });
 
     resultText.textContent = `${playerStatus}`;
