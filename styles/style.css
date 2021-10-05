@@ -31,14 +31,16 @@ body {
     font-size: 1.4rem;
     margin-top: 493px;
     margin-right: 110px;
-
 }
+
 #guess-button {
     border-radius: 50%;
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 115px;
     font-size: 1.4rem;
-    margin-top: 20px;
+    margin-top: 260px;
+    margin-right: 135px;
+    z-index: 2;
 }
 
 #user-input {

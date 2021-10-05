@@ -7,7 +7,7 @@ const playButton = document.getElementById('play-button');
 const resultText = document.getElementById('result-text');
 const guessCount = document.getElementById('guess-count');
 const resetButton = document.getElementById('reset-button');
-const shownPage = document.getElementById('shown-page-id');
+// const shownPage = document.getElementById('shown-page-id');
 
 let randomNum = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
 let numGuessesRemain = 4;
@@ -50,9 +50,9 @@ resetButton.addEventListener ('click', () => {
     document.getElementById('lose-page-id').style.display = 'block';
 });
 
-shownPage ('shown', ()=> {
-  
-}) 
+// shownPage ('shown', ()=> {
+
+// }) 
 
 //     resultText.textContent = `${playerStatus}`;
 //     guessCount.textContent = Number(numGuessesRemain);
