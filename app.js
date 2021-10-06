@@ -46,8 +46,8 @@ guessButton.addEventListener ('click', () => {
 
 resetButton.addEventListener ('click', () => {
     console.log('clicking');
-    document.getElementById('play-page-id').style.display = 'block';
-    document.getElementById('lose-page-id').style.display = 'block';
+    // document.getElementById('play-page-id').style.display = 'block';
+    // document.getElementById('lose-page-id').style.display = 'block';
 });
 
 // shownPage ('shown', ()=> {
