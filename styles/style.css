@@ -93,6 +93,6 @@ body {
     color: white;
 }
 
-.lose-page {
-    color: white;
+.hidden {
+    display: none;
 }
