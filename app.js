@@ -7,16 +7,17 @@ const playButton = document.getElementById('play-button');
 const resultText = document.getElementById('result-text');
 const guessCount = document.getElementById('guess-count');
 const resetButton = document.getElementById('reset-button');
+
 // const shownPage = document.getElementById('shown-page-id');
 
-let randomNum = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
+let randomNum = Math.floor(Math.random() * (20)) + 1;
 let numGuessesRemain = 4;
 
 playButton.addEventListener ('click', () => {
     randomNum;
     document.getElementById('play-page-id').style.display = 'block';
     document.getElementById('shown-page-id').style.display = 'none';
-    document.getElementById('lose-page-id').style.display = 'none';
+    resetButton.classList.add('hidden');
 });
 
 guessButton.addEventListener ('click', () => {
@@ -32,22 +33,26 @@ guessButton.addEventListener ('click', () => {
     else if (userGuess < randomNum) {
         playerStatus = 'too low!';
     }
-  
+    
     if (numGuessesRemain <= 0) {
-        guessButton.style.display = 'none';
-        document.getElementById('play-page-id').style.display = 'block';
+        guessButton.disabled = true;
+        resetButton.classList.remove('hidden');
+        
         // playerStatus = 'you lost!';
-        document.getElementById('lose-page-id').style.display = 'block';
+        
     }
-
+    
     resultText.textContent = `${playerStatus}`;
     guessCount.textContent = Number(numGuessesRemain);
 });
 
 resetButton.addEventListener ('click', () => {
-    console.log('clicking');
-    // document.getElementById('play-page-id').style.display = 'block';
-    // document.getElementById('lose-page-id').style.display = 'block';
+    
+    randomNum = Math.floor(Math.random() * (20)) + 1;
+    numGuessesRemain = 4;
+    guessButton.disabled = false;
+    
+   
 });
 
 // shownPage ('shown', ()=> {
